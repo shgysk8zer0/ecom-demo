@@ -15,7 +15,7 @@
     "build:css": "postcss css/styles/index.css -o css/styles/index.min.css",
     "build:js": "webpack",
     "build:icons": "svg-sprite-generate -c img/icons.csv -o img/icons.svg",
-    "build:site": "npm run build:all && JEKYLL_ENV=production bundle exec jekyll build",
+    "build:site": "npm run build && JEKYLL_ENV=production bundle exec jekyll build",
     "build:site:dev": "bundle exec jekyll build --drafts --unpublished --future --profile --trace --strict_front_matter",
     "postinstall": "npm run git:submodules && npm run build",
     "start": "npm run serve:dev",
