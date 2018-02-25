@@ -1,0 +1,17 @@
+<div class="card inline-block product-preview">
+	{% assign product=include.data.last %}
+	<h2 class="product-title font-title">{{ product.name }}</h2>
+	<div class="center background-primary">
+		<img src="{{ product.image | absolute_url }}" width="120" />
+	</div>
+	<br />
+	<span class="color-accent">
+		{{ product.currency | default: '$' }}{{ product.price }}
+	</span>
+	<br /><br />
+	<details>
+		<summary role="button">More Info</summary>
+		<hr />
+		<p>{{ product.description }}</p>
+	</details>
+</div>

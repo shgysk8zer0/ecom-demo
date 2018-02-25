@@ -1,0 +1,6 @@
+<dialog id="{{ include.id }}-dialog"{% if include.open %} open=""{% endif %}>
+	<header class="background-primary shadow sticky top z-3 clearfix">
+		<button type="button" data-close="#{{ include.id }}">{{ include icon.html icon='close' }}</button>
+	</header>
+	{{ include.content }}
+</dialog>

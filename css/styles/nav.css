@@ -1,0 +1,40 @@
+body > nav {
+	font-size: 1.5rem;
+	width: 100%;
+	background-color: white;
+	grid-area: nav;
+	height: var(--nav-height);
+	line-height: var(--nav-height);
+	font-size: 0.85rem;
+	justify-content: space-around;
+}
+
+body > nav > :not(:last-child) {
+	display: flex;
+	justify-self: center;
+	flex: 0 1 auto;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+body > nav .mobile-hidden {
+	margin-left: 0.6rem;
+}
+
+body > nav > :first-child {
+	flex-basis: 30vw;
+	font-size: 2rem;
+	justify-self: flex-start;
+	justify-content: left;
+}
+
+body > nav > :last-child {
+	justify-self: flex-end;
+}
+
+body > nav > :last-child [role="button"] {
+	padding: 0.3rem 0.7rem;
+	border-radius: 8em;
+}

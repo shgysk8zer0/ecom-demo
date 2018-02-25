@@ -1,0 +1,8 @@
+#calendar {
+	grid-area: calendar;
+	margin: 0.8rem;
+}
+
+#calendar .event:not(:last-child) {
+	margin-bottom: 0.8rem;
+}

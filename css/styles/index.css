@@ -1,0 +1,119 @@
+@charset "UTF-8";
+@import url("./vars.css");
+@import url("../core-css/viewport.css");
+@import url("../normalize/normalize.css");
+@import url("../core-css/rem.css");
+@import url("../core-css/fonts.css");
+@import url("../core-css/animations.css");
+@import url("../animate.css/animate.css");
+@import url("../core-css/element.css");
+@import url("../core-css/class-rules.css");
+@import url("../core-css/fonts.css");
+@import url("./layout.css");
+@import url("./icons.css");
+@import url("./header.css");
+@import url("./nav.css");
+@import url("./main.css");
+@import url("./pinned-posts.css");
+@import url("./calendar.css");
+@import url("./footer.css");
+@import url("./dialog.css");
+@import url("./contact.css");
+@import url("./about-page.css");
+@import url("./imgur-gallery.css");
+
+#featured-products {
+	align-items: center;
+	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 20vw));
+	grid-gap: 0.6em;
+	grid-auto-flow: row;
+}
+
+hr {
+	max-width: calc(100vw - 100px);
+	width: 100%;
+	opacity: 0.15;
+}
+
+svg {
+	max-width: 4em;
+	max-height: 4em;
+}
+
+aside picture > img {
+	width: 100%;
+}
+
+header a, header a:hover, nav a, nav a:hover, footer a, footer a:hover {
+	color: inherit;
+}
+
+figure, figcaption {
+	display: block;
+}
+
+figure picture, figure img {
+	margin: auto;
+	display: block;
+}
+
+figcaption {
+	margin: 1em;
+}
+
+.breadcrumb:not(:last-child)::after {
+	content: ' / ';
+}
+
+.under-nav {
+	top: var(--nav-height);
+}
+
+.category-header {
+	padding: 0.3rem;
+}
+
+.social-icons {
+	justify-content: space-around;
+}
+
+.container.flex.row {
+	justify-content: space-around;
+}
+
+pre, table, tr, thead, tfoot {
+	overflow: auto;
+}
+
+pre.highlight, code.highlight {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.6)
+}
+
+.no-js [data-show], .no-js [data-show-modal] {
+	cursor: not-allowed;
+}
+
+.article-preview img, .article-preview picture {
+	display: block;
+	margin: auto;
+}
+
+.paginate-nav {
+	position: sticky;
+	bottom: 0.7rem;
+	font-size: 1.1rem;
+}
+
+.background-accent {
+	background: var(--accent-color);
+}
+
+@media (max-width: 800px) {
+	.mobile-hidden {
+		display: none;
+	}
+}

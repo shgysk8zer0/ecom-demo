@@ -1,0 +1,23 @@
+header {
+	font-family: var(--header-font);
+}
+
+body > header {
+	grid-area: header;
+	margin-top: var(--nav-height);
+	background: var(--header-background);
+	min-height: 30vh;
+}
+
+body.layout-home > header {
+	height: calc(100vh - var(--nav-height));
+}
+
+body > header > [itemtype="http://schema.org/Person"] {
+	height: 100%;
+	justify-content: space-around;
+}
+
+.social-links {
+	margin-bottom: 1em;
+}

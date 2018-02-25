@@ -1,0 +1,45 @@
+default:
+- '''self'''
+img:
+- '*'
+# - 'data:'
+script:
+- '''self'''
+- 'https://cdn.polyfill.io'
+- 'https://gist.github.com'
+- 'https://production-assets.codepen.io'
+- 'https://codepen.io/'
+- 'https://*.disqus.com/embed.js'
+- 'https://disqus.com/'
+- 'https://c.disquscdn.com/'
+- 'https://www.googletagmanager.com'
+- 'https://www.google-analytics.com/analytics.js'
+- 'pagead2.googlesyndication.com'
+- 'https://adservice.google.com/'
+# Google Analytics script hash
+- '''sha256-uv9ihhWV1/99Lna4PlyzJ4Ji2ofiXKU9ak+GUXMN0gw='''
+# Google AdSense script hash
+- '''sha256-YCSlybv0BJeWnGWF8JCyQMs1TUOxVjFyr5upfHiDysc='''
+# Disqus script hash
+- '''sha256-YmEu57ZRfDpDDhMApyHsyE3PA6DSf2V+9bIVooFPFHw='''
+style:
+- '''self'''
+- '''unsafe-inline'''
+- 'https://assets-cdn.github.com'
+- 'https://www.youtube.com'
+- 'https://c.disquscdn.com'
+connect:
+- '*'
+- 'wss://realtime.services.disqus.com'
+- 'https://disqus.com'
+child:
+- '''self'''
+- 'https://www.youtube.com'
+- 'https://www.youtube-nocookie.com'
+- 'https://disqus.com'
+font:
+- '''self'''
+media:
+- '*'
+# report-uri: 'https://superuser.report-uri.com/r/d/csp/enforce'
+block-mixed-content: true

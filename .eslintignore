@@ -1,0 +1,8 @@
+/node_modules/
+/_site/
+*.config.js
+*.min.js
+/img/
+/css/
+/js/std-js/
+/js/svg4everybody/

@@ -1,0 +1,55 @@
+:root {
+	--desktop-rem: 1.3vw;
+	--tablet-rem: 1.5vw;
+	--mobile-rem: 3.3vw;
+
+	--font-display: optional;
+
+	/*================= Set color vars here =================*/
+	--default-color: #010101;
+	--alt-color: #FEFEFE;
+	--primary-color: #E0E0E0;
+	--link-color: var(--accent-color);
+	--accent-color: #437FD2;
+	--accent-color-2: #005DAC;
+	--border-color: #2D2D2D;
+	--header-bg-color: var(--accent-color);
+
+	--button-background: var(--accent-color);
+	--button-active-background: var(--accent-color-2);
+	--button-disabled-background: var(--button-active-background);
+	--button-border: 1px solid #aeaeae;
+	--button-disabled-border: var(--button-border);
+	--button-active-border: var(--button-disabled-border);
+	--button-color: var(--alt-color);
+	--button-active-color: var(--button-color);
+	--button-border-radius: 4px;
+	--button-padding: 0.4em;
+
+	/*========== Set background images, etc here ==========*/
+	--header-background: url("/img/neon.svg");
+	--header-background-full : url("/img/background.jpg");
+	--header-background-l: url("/img/background-1200.jpg");
+	--header-background-m: url("/img/background-800.jpg");
+	--header-background-s: url("/img/background-420.jpg");
+	--header-background-chrome-full : url("/img/background.webp");
+	--header-background-chrome-l: url("/img/background-1200.webp");
+	--header-background-chrome-m: url("/img/background-800.webp");
+	--header-background-chrome-s: url("/img/background-420.webp");
+	--nav-height: 4rem;
+
+	/*==================== Set fonts here ====================*/
+	--main-font: 'Roboto';
+	--title-font: 'Ubuntu';
+	--header-font: 'Alice';
+	--article-font: 'Ubuntu';
+	--article-header-font: var(--header-font);
+
+	/*================== Animation properties ==================*/
+	--animation-stagger: 150ms;
+
+	/* ================= Syntax Highlighting ====================*/
+	--highlight-color: black;
+	--highlight-background: #efefef;
+	--highlight-literal-number-color: #CCA418;
+}

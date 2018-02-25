@@ -1,0 +1,21 @@
+<dialog id="login-dialog" class="animation-speed-normal animation-ease-out zoomInUp">
+	<header class="background-primary sticky top z-3 clearfix">
+		<button type="button" data-close="#login-dialog">{% include icon.html icon='close' %}</button>
+	</header>
+	<form name="login" method="post">
+		<fieldset>
+			<div>
+				<label for="login-email" title="Email address">{% include icon.html icon='mention' %}</label>
+				<input type="email" name="login[email]" autocomplete="email" id="login-email" placeholder="user@example.com" required="" />
+			</div>
+			<div>
+				<label for="login-password" title="Password">{% include icon.html icon='password' %}</label>
+				<input type="password" name="login[password]" autocomplete="current-password" id="login-password" placeholder="*******" required="" />
+			</div>
+		</fieldset>
+		<button type="submit">{% include icon.html icon='check' %}</button>
+		<button type="reset">{% include icon.html icon='edit-clear' %}</button>
+		<hr />
+		<button type="button" data-show-modal="#registration-dialog" data-close="#login-dialog">Sign Up</button>
+	</form>
+</dialog>

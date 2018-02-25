@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html
+	lang="{{ site.lang | default: 'en' }}"
+	dir="{{ site.dir | default: 'ltr' }}"
+	class="no-js scroll-smooth"
+	itemtype="{{ page.itemtype | default: 'http://schema.org/WebPage' }}"
+	itemscope=""
+	{% if site.service_worker %}data-service-worker="{{site.service_worker | absolute_url }}"{% endif %}
+	data-support-test="details, dialog, cssvars"
+	{% if site.google-analytics %}data-google-analytics="{{ site.google-analytics }}"{% endif %}
+	{% if page.ads %}data-ad-sense-id="{{ site.ad-sense }}"{% endif %}
+	{% if page.pageLevelAds %}data-page-level-ads="{{ page.pageLevelAds }}"{% endif %}
+>
+	{% include head.html %}
+	<body
+		id="top"
+		class="layout-{{ page.layout }} {{ site.body-class }}"
+		contextmenu="{{ page.contextmenu | default: site.contextmenu }}"
+		{% if page.itemprop and page.itemtype %}
+			itemprop="{{ page.itemprop }}"
+			itemtype="{{ page.itemtype }}"
+			itemscope=""
+		{% endif %}
+	>
+		{% include share-button.html %}
+		{% include header.html %}
+		{% include nav.html %}
+		<main class="color-default font-article card shadow-dark" role="main" itemprop="mainContentOfPage">
+			{{ content }}
+			{% if page.ads %}{% include ad.html %}{% endif %}
+		</main>
+		{% include footer.html org=site.data.company %}
+		{% include nav-menu.html %}
+	</body>
+</html>

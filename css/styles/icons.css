@@ -1,0 +1,25 @@
+.icon-twirl:hover {
+	transform: rotate(360deg) scale(1.7);
+}
+
+[data-share] {
+	bottom: 0.5rem;
+	right: 0.2rem;
+	width: 2.7rem;
+	height: 2.7rem;
+	font-size: 2rem;
+	border: none;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	transition: transform 400ms ease-in-out;
+}
+
+[data-share]:hover {
+	transform: scale(1.2);
+}
+
+[data-share] > svg {
+	width: auto;
+	height: 60%;
+}

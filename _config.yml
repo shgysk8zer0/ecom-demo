@@ -1,0 +1,195 @@
+author: Chris Zuber
+title: Generic Company
+url: 'https://shgysk8zer0.github.io'
+markdown: kramdown
+version: 0.1.0
+lang: en
+dir: ltr
+charset: utf-8
+paginate: 8
+paginate_path: "/page-:num/"
+viewport: width=device-width
+robots: 'follow,index'
+referrer: origin-when-cross-origin
+manifest: /manifest.json
+tiles-config: /broswerconfig.xml
+service_worker: /service-worker.js
+og-type: website
+description: "A demo eCommerce store"
+mobile-web-app-capable: true
+publisher: 'https://plus.google.com/113117303106986445610'
+contextmenu: nav-menu
+body-class: 'background-primary grid border-box cursor-default font-main'
+feature-detect:
+- details
+- dialog
+keywords:
+- eCommerce
+- store
+- demo
+repository:
+  username: shgysk8zer0
+  title: ecom-demo
+  url: 'https://github.com/shgysk8zer0/ecom-demo'
+twitter: SudoDevTeam
+feed:
+  url: /feed.rss
+  type: application/rss+xml
+icons: '/img/icons.svg'
+theme-color: '#009688'
+background-color: '#242424'
+discus-identifier: chris-zuber
+google-analytics: UA-112855471-1
+ad-sense: ca-pub-7757418455191610
+webmaster-verifications:
+  google: 0cMX_-aKH-pe1wQXGDlK833KE3-kN5V7y3eaywoCXdk
+  bing: B4BA0BE1916BB0AE8AFAC3ACC826DF57
+scripts:
+  development:
+  - src: 'https://cdn.polyfill.io/v2/polyfill.min.js?unknown=polyfill&features=es6,MutationObserver,IntersectionObserver,IntersectionObserverEntry,Object.values,Object.entries,NodeList.prototype.@@iterator,Array.prototype.@@iterator&flags=gated'
+    type: application/javascript
+    crossorigin: anonymous
+  - src: /js/index.js
+    type: module
+    async: true
+  - src: /js/index.min.js
+    type: application/javascript
+    async: true
+    nomodule: true
+  production:
+  - src: 'https://cdn.polyfill.io/v2/polyfill.min.js?unknown=polyfill&features=es6,MutationObserver,IntersectionObserver,IntersectionObserverEntry,Object.values,Object.entries,NodeList.prototype.@@iterator,Array.prototype.@@iterator&flags=gated'
+    type: application/javascript
+    crossorigin: anonymous
+  - src: /js/index.min.js
+    type: application/javascript
+    async: true
+stylesheets:
+  development:
+  - href: /css/styles/index.css
+    media: all
+  production:
+  - href: /css/styles/index.min.css
+    media: all
+preload:
+- href: /img/icons.svg
+  as: image
+  type: image/svg+xml
+  name: icons
+- href: /img/logos/facebook.svg
+  as: image
+  type: image/svg+xml
+  name: Facebook
+- href: /img/logos/twitter.svg
+  as: image
+  type: image/svg+xml
+  name: Twitter
+- href: /img/logos/google-plus.svg
+  as: image
+  type: image/svg+xml
+  name: Google+
+- href: /img/logos/reddit.svg
+  as: image
+  type: image/svg+xml
+  name: Reddit
+- href: /img/logos/linkedin.svg
+  as: image
+  type: image/svg+xml
+  name: LinkedIn
+- href: /img/logos/gmail.svg
+  as: image
+  type: image/svg+xml
+  name: Gmail
+appicons:
+- src: /img/favicon.svg
+  sizes: any
+  type: image/svg+xml
+- src: /img/icon-512.png
+  sizes: 512x512
+  type: image/png
+- src: /img/icon-192.png
+  sizes: 192x192
+  type: image/png
+screenshots:
+- src: 'https://i.imgur.com/Ers0Xql.png'
+  sizes: 649x604
+  type: image/png
+defaults:
+- scope:
+    path: _posts
+  values:
+    layout: page
+    author: Chris Zuber
+    permalink: /:categories/:title/
+    comments: true
+    ads: false
+    index: true
+- scope:
+    path: _drafts
+  values:
+    layout: page
+    author: Chris Zuber
+    permalink: /:categories/:title/
+    comments: false
+    ads: false
+plugins:
+- jekyll-gist
+- jekyll-youtube
+- jekyll-admin
+- jekyll-watch
+# - jekyll-avatar
+# - jekyll-mentions
+# - jekyll-github-metadata
+- jekyll-paginate
+# - jekyll-optional-front-matter
+# - jekyll-readme-index
+# - jekyll-titles-from-headings
+# - jekyll-include-cache
+# - jekyll-seo-tag
+# - jemoji
+# - jekyll-octicons
+exclude:
+- "*.rb"
+- "*.gemspec"
+- "*.php"
+- "*.sh"
+- "*.csv"
+- "*.sfd"
+- "*.ai"
+- "*.psd"
+- "*.sketch"
+- "*.yml"
+- "*.lock"
+- "*.log"
+- "/css/*.md"
+- "/js/*.md"
+- "/img/*.md"
+- "/fonts/*.md"
+- "/js/*.json"
+- docs/
+- "/css/*.json"
+- "/img/*.json"
+- "/js/*.html"
+- Gemfile
+- node_modules/
+- palette.xml
+- postcss.config.js
+- postcss.config.json
+- README.md
+- LICENSE
+- "*.config.js"
+- "/img/octicons/test"
+- "/img/octicons/*.js"
+- "/img/octicons/*.md"
+- "/img/octicons/LICENSE"
+- "/img/octicons/lib/*.css"
+- "/img/octicons/lib/octicons_gem"
+- "/img/octicons/lib/octicons_node"
+- "/img/octicons/lib/octicons_helper"
+- "/img/octicons/lib/jekyll-octicons"
+- "/img/octicons/script"
+- "/img/adwaita-icons/docs"
+- "/img/adwaita-icons/LICENSE"
+- "css/core-css/docs"
+- "css/normalize/*.html"
+- "js/std-js/docs"
+- "js/std-js/test"

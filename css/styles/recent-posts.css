@@ -1,0 +1,9 @@
+#recent-posts {
+	grid-area: recent-posts;
+	margin: 0.8rem;
+}
+
+#recent-posts img, #recent-posts picture {
+	min-width: 90%;
+	height: auto;
+}

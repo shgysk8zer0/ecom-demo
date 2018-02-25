@@ -1,0 +1,10 @@
+<nav class="fixed top shadow-dark flex row font-main center no-text-decoration z-3" role="navigation" itemtype="http://schema.org/SiteNavigationElement" itemscope="">
+	<a href="{{ '/' | absolute_url }}">{% include icon.html icon='logo' class='branding logo' %}</a>
+	<a href="#"><span>Home</span></a>
+	<a href="#"><span>Products</span>{% include icon.html icon='go-down' %}</a>
+	<a href="#"><span>Categories</span>{% include icon.html icon='go-down' %}</a>
+	<span>
+		<a href="#"><span role="button">Shop Now!</span></a>
+		<span>{% include icon.html icon='search' %}</span>
+	</span>
+</nav>

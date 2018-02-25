@@ -1,0 +1,9 @@
+/img/
+/js/
+/fonts/
+/css/core-css/
+/css/normalize/
+/css/animate.css/
+/_site/
+*.min*
+*.map

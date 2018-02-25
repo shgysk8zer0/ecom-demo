@@ -1,0 +1,25 @@
+<dialog id="registration-dialog" class="animation-speed-normal animation-ease-out zoomInUp">
+	<header class="background-primary sticky top z-3 clearfix">
+		<button type="button" data-close="#registration-dialog">{% include icon.html icon='close' %}</button>
+	</header>
+	<form name="registration" method="post">
+		<fieldset>
+			<div>
+				<label for="registration-email" title="Email address">{% include icon.html icon='mention' %}</label>
+				<input type="email" name="registration[email]" autocomplete="email" id="registration-email" placeholder="user@example.com" required="" />
+			</div>
+			<div>
+				<label for="registration-password" title="Password">{% include icon.html icon='password' %}</label>
+				<input type="password" name="registration[password]" autocomplete="new-password" id="registration-password" placeholder="*******" required="" />
+			</div>
+			<div>
+				<label for="registration-name" title="First name">{% include icon.html icon='avatar-default' %}</label>
+				<input type="text" name="registration[name]" autocomplete="name" placeholder="Name" required="" />
+			</div>
+		</fieldset>
+		<button type="submit">{% include icon.html icon='check' %}</button>
+		<button type="reset">{% include icon.html icon='edit-clear' %}</button>
+		<hr />
+		<button type="button" data-show-modal="#login-dialog" data-close="#registration-dialog">Login</button>
+	</form>
+</dialog>

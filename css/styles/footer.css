@@ -1,0 +1,33 @@
+body > footer {
+	grid-area: footer;
+	padding: 1em;
+	background-image: linear-gradient(#484848, #454545 40%, #262626);
+	border-top: 0.1rem solid var(--accent-color);
+}
+
+footer .flex {
+	font-size: 1.3rem;
+	justify-content: space-around;
+}
+
+footer .flex ul {
+	list-style: none;
+}
+
+footer .flex ul li {
+	margin-bottom: 0.3em;
+}
+
+.payment-accepted {
+	background: white;
+	display: inline-block;
+	width: 5em;
+	font-size: 0.8rem;
+	border-radius: 0.5em;
+	padding: 0.7em 0.5em;
+	margin: 0.3em;
+}
+
+.payment-accepted .icon {
+	width: auto;
+}

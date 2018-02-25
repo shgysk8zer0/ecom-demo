@@ -1,0 +1,68 @@
+@import url("../core-css/jekyll-highlight.css");
+@import url("./jekyll-youtube.css");
+
+[itemprop~="articleBody"] a, [itemprop~="articleBody"] a:hover {
+	color: var(--accent-color);
+	text-decoration: underline;
+}
+
+article header {
+	border: 2px solid #dbdbdb;
+	border-top-width: 0;
+	color: var(--alt-color);
+	background-color: var(--accent-color);
+	padding: 0.2em 2em 1em 2em;
+}
+
+article header a:hover {
+	text-decoration: none;
+}
+
+[itemprop~="articleBody"] {
+	margin: .7em;
+}
+
+[itemprop~="articleBody"] img.float-left, [itemprop~="articleBody"] picture.float-left {
+	margin: 1.5em 1.5em 1.5em 0.5em;
+}
+
+[itemprop~="articleBody"] img.float-right, [itemprop~="articleBody"] picture.float-right {
+	margin: 1.5em 0.5em 1.5em 1.5em;
+}
+
+[itemprop~="articleBody"] table td, [itemprop~="articleBody"] table th {
+	border: 1px solid #d4d7d9;
+	padding: .4em;
+}
+
+[itemprop~="articleBody"] table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.meta-author-links {
+	align-content: center;
+	align-items: center;
+	padding: 0.5em 0;
+}
+
+.meta-author-links a {
+	margin-left: 0.3em;
+	height: 1.3em;
+}
+
+.meta-author-links svg {
+	width: 1.2em;
+	height: 1.2em;
+}
+
+article table, article pre {
+	max-width: 100vw;
+	overflow-x: auto;
+}
+
+@media (min-width: 700px) {
+	article table, article pre {
+		max-width: 75vw;
+	}
+}

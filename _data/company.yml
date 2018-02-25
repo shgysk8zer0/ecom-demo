@@ -1,0 +1,10 @@
+name: Generic Company
+address:
+  streetAddress: 1234 Some St.
+  addressLocality: Anywhere
+  addressRegion: CA
+  postalCode: 98765
+telephone: +1-555-123-4567
+email: info@example.com
+url: 'https://example.com'
+logo: /img/logo.svg

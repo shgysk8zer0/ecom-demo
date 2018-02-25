@@ -1,0 +1,60 @@
+'@context': 'http://schema.org'
+'@type': Person
+givenName: Christopher
+additionalName: Wayne
+familyName: Zuber
+url: 'https://shgysk8zer0.github.io'
+sameAs:
+  twitter: shgysk8zer0
+  github: shgysk8zer0
+  google_plus: +ChrisZuber
+  youtube: shgysk8zer0
+  linkedin: chris-zuber-455346141
+  stackoverflow: 2573566
+  upwork: _~01568b211423f33d85
+telephone: +1-661-619-6712
+email: chris@chriszuber.com
+description: |-
+  I write code and poetry. Overall <q>knurd.</q> I know how to exit vim!
+  <br />
+  Full Stack Web Developer and follower of the Unix Philosophy
+jobTitle: Full Stack Web Developer
+worksFor:
+  '@type': Organization
+  name: SuperUserDev
+  url: 'https://superuserdev.github.io'
+  email: chris@chriszuber.com
+  telephone: +1-661-619-6712
+  address:
+    addressLocality: Mount Vernon
+    addressRegion: Washington
+  logo:
+    '@type': ImageObject
+    contentUrl: '/img/logos/super-user.svg'
+    width: 128
+    height: 128
+    encodingFormat: svg
+  sameAs:
+    twitter: SudoDevTeam
+    linkedin: superuserdev
+    github: superuserdev
+    google_plus: 113117303106986445610
+image:
+  '@type': ImageObject
+  gravatar: 43578597e449298f5488c2407c8a8ae5
+  width: 256
+  height: 256
+  encodingFormat: png
+homeLocation:
+  '@type': Place
+  address:
+    '@type': PostalAddress
+    addressLocality: Mount Vernon
+    addressRegion: Washington
+    postalCode: 98274
+    addressCountry: United States
+  geo:
+    '@type': GeoCoordinates
+    latitude: 48.420059
+    longitude: -122.326431
+    url: 'geo:48.420059,-122.326431;crs=wgs84;u=0'

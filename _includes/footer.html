@@ -1,0 +1,92 @@
+{% assign footer-icon-class="icon current-color icon-twirl transition-speed-normal transition-overshoot transition-transform" %}
+<footer id="contact" class="color-alt no-text-decoration optimize-speed font-main" role="contentinfo">
+	<div class="flex row wrap">
+		<div class="contact-info" itemprop="publisher" itemtype="http://schema.org/Organization" itemscope="">
+			<div itemprop="logo" itemtype="http://schema.org/ImageObject" itemscope="">
+				<img src="{{ include.org.logo | absolute_url }}" itemprop="url" alt="{{ include.org.name }}" width="160" />
+			</div>
+			<meta itemprop="name" content="{{ include.org.name }}" />
+			<div class="clearfix">
+				{% include icon.html icon='location' class='icon current-color float-left' %}
+				<address class="float-left" itemprop="address" itemtype="http://schema.org/PostalAddress" itemscope="">
+					<div itemprop="streetAddress" data-after=",">{{ include.org.address.streetAddress }}</div>
+					<div>
+						<span itemprop="addressLocality" data-after=",">{{ include.org.address.addressLocality }}</span>
+						<span itemprop="addressRegion">{{ include.org.address.addressRegion }}</span>
+						<span itemprop="postalCode">{{ include.org.address.postalCode }}</span>
+					</div>
+				</address>
+			</div>
+			<a class="block" href="tel:{{ include.org.telephone }}" itemprop="telephone">
+				{% include icon.html icon='call-start' %}
+				{{ include.org.telephone | replace: '+', '' }}
+			</a>
+			<a class="block" href="mailto:{{ include.org.email }}" itemprop="email">
+				{% include icon.html icon='mail-unread' %}
+				{{ include.org.email }}
+			</a>
+			<a class="block" href="{{ include.org.url }}" itemprop="url">
+				{% include icon.html icon='web-browser' %}
+				{{ include.org.url | replace: 'http://', '' | replace: 'https://', '' }}
+			</a>
+			<hr />
+			<a href="#" itemprop="sameAs" rel="noopener external">
+				{% include icon.html icon='facebook' class=footer-icon-class %}
+			</a>
+			<a href="#" itemprop="sameAs" rel="noopener external">
+				{% include icon.html icon='twitter' class=footer-icon-class %}
+			</a>
+			<a href="#" itemprop="sameAs" rel="noopener external">
+				<img src="{{ 'img/logos/instagram.svg' | absolute_url }}" class="{{ footer-icon-class }}" />
+			</a>
+			<a href="#" itemprop="sameAs" rel="noopener external">
+				{% include icon.html icon='google+' class=footer-icon-class %}
+			</a>
+			<a href="#" itemprop="sameAs" rel="noopener external">
+				{% include icon.html icon='youtube' class=footer-icon-class %}
+			</a>
+		</div>
+		<ul>
+			<li>
+				<a href="{{ '/about/' | absolute_url }}" class="color-inherit">
+					{% include icon.html icon='avatar-default' class=footer-icon-class %}
+					About
+				</a>
+			</li>
+			<li>
+				<a href="{{ '/contact/' | absolute_url }}" class="color-inherit">
+					{% include icon.html icon='address-book' class=footer-icon-class %}
+					Contact
+				</a>
+			</li>
+			{% if site.feed %}
+				<li>
+					<a href="{{ site.feed.url | absolute_url}}" title="Subscribe to feed" target="_blank" class="inline-block color-inherit">
+						{% include icon.html icon="rss" class=footer-icon-class %}
+						RSS Feed
+					</a>
+				</li>
+			{% endif %}
+		</ul>
+	</div>
+	<hr />
+	<div class="center">
+		<span data-after=" |">&copy;&nbsp;<time itemprop="copyrightYear">{{ 'now' | date: "%Y" }}</time></span>
+		<a data-after=" |" href="{{ site.url | absolute_url }}">{{ site.title }}</a>
+		<span>All Rights Reserved</span>
+	</div>
+	<div class="center">
+		<span class="payment-accepted">
+			<img src="{{ 'img/logos/visa.svg' | absolute_url }}" alt="Visa" class="icon" />
+		</span>
+		<span class="payment-accepted">
+			<img src="{{ 'img/logos/paypal.svg' | absolute_url }}" alt="PayPal" class="icon" />
+		</span>
+		<span class="payment-accepted">
+			<img src="{{ 'img/logos/mastercard.svg' | absolute_url }}" alt="Mastercard" class="icon" />
+		</span>
+		<span class="payment-accepted">
+			<img src="{{ 'img/logos/discover.svg' | absolute_url }}" alt="Discover" class="icon" />
+		</span>
+	</div>
+</footer>
