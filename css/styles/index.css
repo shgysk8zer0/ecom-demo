@@ -28,11 +28,13 @@
 	margin-bottom: 0.6rem;
 }
 
-[itemtype="http://schema.org/Product"] section {
-	padding: 2em;
-	max-width: 1200px;
-	margin-left: calc(50vw - 600px);
-	margin-bottom: 1.1em;
+@media (min-width: 1201px) {
+	[itemtype="http://schema.org/Product"] section {
+		padding: 2em;
+		max-width: 1200px;
+		margin-left: calc(50vw - 600px);
+		margin-bottom: 1.1em;
+	}
 }
 
 hr {
