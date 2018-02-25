@@ -132,14 +132,14 @@ defaults:
     comments: false
     ads: false
 plugins:
-- jekyll-gist
+# - jekyll-gist
 - jekyll-youtube
 - jekyll-admin
 - jekyll-watch
 # - jekyll-avatar
 # - jekyll-mentions
 # - jekyll-github-metadata
-- jekyll-paginate
+# - jekyll-paginate
 # - jekyll-optional-front-matter
 # - jekyll-readme-index
 # - jekyll-titles-from-headings

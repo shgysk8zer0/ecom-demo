@@ -11,9 +11,9 @@ ruby RUBY_VERSION
 # Happy Jekylling!
 gem "jekyll", "3.6.2"
 # gem "jekyll-github-metadata", "~> 1.0"
-gem 'jekyll-gist', '~> 1.4', '>= 1.4.1'
+# gem 'jekyll-gist', '~> 1.4', '>= 1.4.1'
 gem 'jekyll-youtube', '~> 1.0'
-gem "jekyll-paginate", "~> 1.1"
+# gem "jekyll-paginate", "~> 1.1"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem "minima"
@@ -40,7 +40,7 @@ gem "jekyll-admin", "~> 0.7.0"
 # gem "jekyll-mentions", "~> 1.2"
 
 # Added at 2018-01-18 19:41:32 -0800 by shgysk8zer0:
-gem "jekyll-avatar", "~> 0.5.0"
+# gem "jekyll-avatar", "~> 0.5.0"
 
 # Added at 2018-01-25 13:37:57 -0800 by shgysk8zer0:
 gem "jekyll-watch", "~> 1.5"
