@@ -1,5 +1,0 @@
-<section class="grid" id="featured-products">
-	{% for file in site.data.products | where: 'featured' | limit: include.limit %}
-		{% include featured-product.html data=file %}
-	{% endfor %}
-</section>

@@ -1,17 +1,26 @@
 <div class="card inline-block product-preview">
-	{% assign product=include.data.last %}
-	<h2 class="product-title font-title">{{ product.name }}</h2>
-	<div class="center background-primary">
-		<img src="{{ product.image | absolute_url }}" width="120" />
-	</div>
+	<a href="{{ include.product.url | absolute_url }}" class="block">
+		<h2 class="product-title font-title inline-block center">{{ include.product.title }}</h2>
+		<div class="center background-primary">
+			{% if include.product.image %}
+				<img src="{{ include.product.image | absolute_url }}" width="120" />
+			{% elsif include.product.imgur %}
+				{% include imgur.html url=include.product.imgur sizes='(min-width: 700px) 100vw, 400px' %}
+			{% endif %}
+		</div>
+	</a>
 	<br />
+	<a href="{{ include.product.category | slugify | append: '/' | absolute_url }}" class="block" >
+		{% include icon.html icon='tag' %}
+		{{ include.product.category | capitalize }}
+	</a>
 	<span class="color-accent">
-		{{ product.currency | default: '$' }}{{ product.price }}
+		{{ include.product.currency | default: '$' }}{{ include.product.price }}
 	</span>
 	<br /><br />
 	<details>
 		<summary role="button">More Info</summary>
 		<hr />
-		<p>{{ product.description }}</p>
+		<p>{{ include.product.description }}</p>
 	</details>
 </div>

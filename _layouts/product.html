@@ -24,7 +24,7 @@
 >
 	{% include nav.html %}
 	{% include header.html %}
-	<main>{{ content }}</main>
+	<main>{% include product-details.html product=page %}</main>
 	{% include footer.html org=site.data.company %}
 	{% include login-form.html %}
 	{% include registration-form.html %}

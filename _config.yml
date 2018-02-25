@@ -6,7 +6,7 @@ version: 0.1.0
 lang: en
 dir: ltr
 charset: utf-8
-paginate: 8
+# paginate: 8
 paginate_path: "/page-:num/"
 viewport: width=device-width
 robots: 'follow,index'
@@ -117,7 +117,7 @@ defaults:
 - scope:
     path: _posts
   values:
-    layout: page
+    layout: product
     author: Chris Zuber
     permalink: /:categories/:title/
     comments: true
@@ -126,7 +126,7 @@ defaults:
 - scope:
     path: _drafts
   values:
-    layout: page
+    layout: product
     author: Chris Zuber
     permalink: /:categories/:title/
     comments: false

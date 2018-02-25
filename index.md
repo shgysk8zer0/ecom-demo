@@ -3,4 +3,9 @@ title: Home
 layout: default
 permalink: /
 ---
-{% include featured-products.html limit=12 %}
+{% assign featured=site.posts | where: 'featured', true %}
+<section class="grid" id="featured-products">
+	{% for product in featured | limit: 12 %}
+		{% include featured-product.html product=product %}
+	{% endfor %}
+</section>

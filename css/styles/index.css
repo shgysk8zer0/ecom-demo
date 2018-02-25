@@ -23,6 +23,18 @@
 @import url("./imgur-gallery.css");
 @import url("./product-list.css");
 
+[itemtype="http://schema.org/Product"] header {
+	border-radius: 12px;
+	margin-bottom: 0.6rem;
+}
+
+[itemtype="http://schema.org/Product"] section {
+	padding: 2em;
+	max-width: 1200px;
+	margin-left: calc(50vw - 600px);
+	margin-bottom: 1.1em;
+}
+
 hr {
 	max-width: calc(100vw - 100px);
 	width: 100%;
