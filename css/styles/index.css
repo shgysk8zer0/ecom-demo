@@ -21,15 +21,7 @@
 @import url("./contact.css");
 @import url("./about-page.css");
 @import url("./imgur-gallery.css");
-
-#featured-products {
-	align-items: center;
-	justify-content: center;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 20vw));
-	grid-gap: 0.6em;
-	grid-auto-flow: row;
-}
+@import url("./product-list.css");
 
 hr {
 	max-width: calc(100vw - 100px);

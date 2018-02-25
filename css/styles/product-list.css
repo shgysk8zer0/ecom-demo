@@ -1,0 +1,7 @@
+#featured-products {
+	align-items: center;
+	justify-content: center;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(270px, 400px));
+	grid-gap: 0.6em;
+}
