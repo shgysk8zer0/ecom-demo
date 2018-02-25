@@ -5,7 +5,7 @@
 			{% if include.product.image %}
 				<img src="{{ include.product.image | absolute_url }}" width="120" />
 			{% elsif include.product.imgur %}
-				{% include imgur.html url=include.product.imgur sizes='(min-width: 700px) 100vw, 400px' %}
+				{% include imgur.html url=include.product.imgur sizes='(max-width: 700px) 100vw, 400px' %}
 			{% endif %}
 		</div>
 	</a>
