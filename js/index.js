@@ -122,12 +122,16 @@ ready().then(async () => {
 				requestShipping: true,
 			});
 
-			try {
-				const paymentResponse = await paymentRequest.show();
-				paymentResponse.complete('success');
-			} catch (error) {
-				paymentRequest.complete('fail');
-				console.error(error);
+			if (await paymentRequest.canMakePayment()) {
+				try {
+					const paymentResponse = await paymentRequest.show();
+					paymentResponse.complete('success');
+				} catch (error) {
+					paymentRequest.complete('fail');
+					console.error(error);
+				}
+			} else {
+				alert('Transaction cannot be completed');
 			}
 		});
 	} else {
