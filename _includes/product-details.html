@@ -13,8 +13,13 @@
 		{% elsif include.product.image %}
 			<img src="{{ include.product.image | absolute_url }}" itemprop="image" />
 		{% endif %}
+		<div itemprop="offer" itemtype="http://schema.org/Offers" itemscope="">
+			<b itemprop="price">{{ include.product.price }}</b>
+			<meta itemprop="priceCurrency" content="USD" />
+		</div>
 		<div itemprop="description">{{ include.product.description }}</div>
 		<br />
+		<button type="button" class="fixed bottom left" data-click="buy">Buy Now!</button>
 		<details>
 			<summary role="button">Product Details</summary>
 			<ul>
