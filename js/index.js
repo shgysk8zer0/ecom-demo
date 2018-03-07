@@ -84,6 +84,54 @@ ready().then(async () => {
 		console.log(JSON.parse(decodeURIComponent(document.head.dataset.jekyllData)));
 	}
 
+	if (window.PaymentRequest instanceof Function) {
+		$('[itemtype="http://schema.org/Product"][itemscope] [data-click="buy"]').click(async event => {
+			const product = event.target.closest('[itemtype="http://schema.org/Product"]');
+			const label = product.querySelector('[itemprop="name"]').textContent;
+			const value = product.querySelector('[itemprop="price"]').textContent;
+			const currency = 'USD';
+			const paymentRequest = new PaymentRequest([{
+				supportedMethods: 'basic-card',
+				data: {
+					supportedNetworks: ['visa', 'mastercard', 'amex', 'jcb',
+						'diners', 'discover', 'mir', 'unionpay'],
+					supportedTypes: ['credit', 'debit']
+				}
+			}], {
+				total: {
+					label: 'Total Cost',
+					amount: {currency, value}
+				},
+				displayItems: [{
+					label,
+					amount: {currency, value}
+				}],
+				shippingOptions: [{
+					id: 'standard',
+					label: 'Standard shipping',
+					amount: {
+						currency: 'USD',
+						value: '0.00'
+					},
+					selected: true
+				}]
+			}, {
+				requestPayerName: true,
+				requestPayerEmail: true,
+				requestPayerPhone: true,
+				requestShipping: true,
+			});
+
+			try {
+				const paymentResponse = await paymentRequest.show();
+				paymentResponse.complete('success');
+			} catch (error) {
+				paymentRequest.complete('fail');
+				console.error(error);
+			}
+		});
+	}
+
 	$('header .animation-paused, body > .animation-paused').each(async (el, n) => {
 		await wait(n * 200);
 		el.classList.remove('animation-paused');
