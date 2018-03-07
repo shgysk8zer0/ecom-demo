@@ -130,6 +130,8 @@ ready().then(async () => {
 				console.error(error);
 			}
 		});
+	} else {
+		$('[itemtype="http://schema.org/Product"][itemscope] [data-click="buy"]').remove();
 	}
 
 	$('header .animation-paused, body > .animation-paused').each(async (el, n) => {
