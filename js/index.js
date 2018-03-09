@@ -2,6 +2,7 @@ import './std-js/deprefixer.js';
 import './std-js/shims.js';
 import './gallery.js';
 import {$, ready, registerServiceWorker} from './std-js/functions.js';
+import {alert} from './std-js/asyncDialog.js';
 import * as Mutations from './std-js/mutations.js';
 import {supportsAsClasses} from './std-js/supports.js';
 import webShareApi from './std-js/webShareApi.js';
@@ -154,22 +155,7 @@ ready().then(async () => {
 		});
 	} else {
 		$('[data-click="buy"]').click(() => {
-			const dialog = document.createElement('dialog');
-			const msg = document.createElement('div');
-			const close = document.createElement('button');
-
-			msg.textContent = 'Your browser does not support the Payment Request API.';
-			msg.append(document.createElement('br'));
-			msg.append('A polyfill is currently being created using form autocomplete.');
-			close.textContent = 'Ok';
-			dialog.append(msg, close);
-
-			dialog.classList.add('clearfix', 'animation-speed-normal', 'animation-ease-in', 'fadeInUp');
-			close.classList.add('float-right');
-			close.addEventListener('click', event => event.target.closest('dialog[open]').close());
-			dialog.addEventListener('close', event => event.target.remove());
-			document.body.append(dialog);
-			dialog.showModal();
+			alert('Your browser does not support the Payment Request API. A polyfill is currently being created using form autocomplete.');
 		}).then($btns => $btns.unhide());
 	}
 });
