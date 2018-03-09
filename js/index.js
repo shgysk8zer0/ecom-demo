@@ -127,7 +127,7 @@ ready().then(async () => {
 						}]
 					};
 					const paymentRequest = new PaymentRequest(methodData, details, options);
-					if (false && await paymentRequest.canMakePayment()) {
+					if (await paymentRequest.canMakePayment()) {
 						const paymentResponse = await paymentRequest.show();
 						paymentResponse.complete('success');
 					} else {
