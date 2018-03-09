@@ -85,54 +85,72 @@ ready().then(async () => {
 	}
 
 	if (window.PaymentRequest instanceof Function) {
-		$('[itemtype="http://schema.org/Product"][itemscope] [data-click="buy"]').click(async event => {
-			const product = event.target.closest('[itemtype="http://schema.org/Product"]');
-			const label = product.querySelector('[itemprop="name"]').textContent;
-			const value = product.querySelector('[itemprop="price"]').textContent;
-			const currency = 'USD';
-			const paymentRequest = new PaymentRequest([{
+		$('[itemtype="http://schema.org/Product"][itemscope]').each(async product => {
+			const methodData = [{
 				supportedMethods: 'basic-card',
 				data: {
-					supportedNetworks: ['visa', 'mastercard', 'amex', 'jcb',
-						'diners', 'discover', 'mir', 'unionpay'],
+					supportedNetworks: ['visa', 'mastercard','discover',],
 					supportedTypes: ['credit', 'debit']
 				}
-			}], {
-				total: {
-					label: 'Total Cost',
-					amount: {currency, value}
-				},
-				displayItems: [{
-					label,
-					amount: {currency, value}
-				}],
-				shippingOptions: [{
-					id: 'standard',
-					label: 'Standard shipping',
-					amount: {
-						currency: 'USD',
-						value: '0.00'
-					},
-					selected: true
-				}]
-			}, {
+			}];
+
+			const options = {
 				requestPayerName: true,
 				requestPayerEmail: true,
 				requestPayerPhone: true,
 				requestShipping: true,
-			});
+			};
 
-			if (await paymentRequest.canMakePayment()) {
+			$('[data-click="buy"]', product).click(async event => {
 				try {
-					const paymentResponse = await paymentRequest.show();
-					paymentResponse.complete('success');
+					const product = event.target.closest('[itemtype="http://schema.org/Product"]');
+					const label = product.querySelector('[itemprop="name"]').textContent;
+					const value = product.querySelector('[itemprop="price"]').textContent;
+					const currency = 'USD';
+					const details = {
+						total: {
+							label: 'Total Cost',
+							amount: {currency, value}
+						},
+						displayItems: [{
+							label,
+							amount: {currency, value}
+						}],
+						shippingOptions: [{
+							id: 'standard',
+							label: 'Standard shipping',
+							amount: {
+								currency: 'USD',
+								value: '0.00'
+							},
+							selected: true
+						}]
+					};
+					const paymentRequest = new PaymentRequest(methodData, details, options);
+					if (false && await paymentRequest.canMakePayment()) {
+						const paymentResponse = await paymentRequest.show();
+						paymentResponse.complete('success');
+					} else {
+						const dialog = document.createElement('dialog');
+						const container  = document.createElement('div');
+						const close = document.createElement('button');
+						dialog.classList.add('font-main', 'clearfix');
+						container.textContent = 'Unable to complete transaction due to no supported method.';
+						close.textContent = 'Ok';
+						close.classList.add('float-right');
+						close.addEventListener('click', () => {
+							dialog.close();
+							dialog.remove();
+						});
+						dialog.append(container, close);
+						document.body.append(dialog);
+						dialog.showModal();
+						throw new Error('Cannot make payment.');
+					}
 				} catch (error) {
-					paymentRequest.complete('fail');
 					console.error(error);
 				}
-			} else {
-				alert('Transaction cannot be completed');
-			}
+			}).then($btns => $btns.unhide());
 		});
 	} else {
 		$('[itemtype="http://schema.org/Product"][itemscope] [data-click="buy"]').remove();

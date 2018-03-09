@@ -1,67 +1,69 @@
-<div itemtype="http://schema.org/Product" itemscope="">
-	<header class="background-accent color-alt card shadow">
-		<h2 itemprop="name">{{ include.product.title }}</h2>
-		<a href="{{ include.product.category | slugify | append: '/' | absolute_url }}" class="block">
-			{% include icon.html icon='tag' %}
-			<span itemprop="category">{{ include.product.category | capitalize }}</span>
-		</a>
-		{% if include.product.color %}<meta itemprop="color" content="{{ include.product.color }}" />{% endif %}
-	</header>
-	<section class="card">
-		{% if include.product.imgur %}
-			{% include imgur.html url=include.product.imgur itemprop='image' %}
-		{% elsif include.product.image %}
-			<img src="{{ include.product.image | absolute_url }}" itemprop="image" />
-		{% endif %}
-		<div itemprop="offer" itemtype="http://schema.org/Offers" itemscope="">
-			<b itemprop="price">{{ include.product.price }}</b>
-			<meta itemprop="priceCurrency" content="USD" />
+<div itemtype="http://schema.org/Product" itemscope="" class="font-main">
+	<header class="product-header">
+		<div class="float-left product-image-container z-2">
+			{% include imgur.html url=include.product.imgur sizes='30vw' %}
 		</div>
-		<div itemprop="description">{{ include.product.description }}</div>
-		<br />
-		<button type="button" class="fixed bottom left" data-click="buy">Buy Now!</button>
-		<details>
-			<summary role="button">Product Details</summary>
-			<ul>
-				{% if include.product.brand %}
-					<li>
-						<span class="detail-name">Brand: </span>
-						<span itemprop="brand">{{ include.product.brand }}</span>
-					</li>
-				{% endif %}
-				{% if include.product.color %}
-					<li>
-						<span class="detail-name">Color: </span>
-						<span itemprop="color">{{ include.product.color }}</span>
-					</li>
-				{% endif %}
-				{% if include.product.weight %}
-					<li>
-						<span class="detail-name">Weight: </span>
-						<span itemprop="weight">{{ include.product.weight }}</span>
-					</li>
-				{% endif %}
-				{% if include.product.width %}
-					<li>
-						<span class="detail-name">Width: </span>
-						<span itemprop="width">{{ include.product.width }}</span>
-					</li>
-				{% endif %}
-				{% if include.product.height %}
-					<li>
-						<span class="detail-name">Height: </span>
-						<span itemprop="height">{{ include.product.height }}</span>
-					</li>
-				{% endif %}
-				{% if include.product.depth %}
-					<li>
-						<span class="detail-name">Depth: </span>
-						<span itemprop="depth">{{ include.product.depth }}</span>
-					</li>
-				{% endif %}
-			</ul>
-		</details>
-	</section>
+		<div class="float-left card shadow product-basics-container">
+			<h2 class="product-name center font-title" itemprop="name">{{ include.product.title }}</h2>
+			<a href="{{ include.product.category | slugify | append: '/' | absolute_url }}" class="block color-accent">
+				{% include icon.html icon='tag' %}
+				<span class="product-category" itemprop="category">{{ include.product.category | capitalize }}</span>
+			</a>
+			{% if include.product.color %}<meta itemprop="color" content="{{ include.product.color }}" />{% endif %}
+			<hr />
+			<div itemprop="offer" itemtype="http://schema.org/Offers" itemscope="">
+				<b itemprop="price" data-before="$">{{ include.product.price }}</b>
+				<meta itemprop="priceCurrency" content="USD" />
+			</div>
+			<button type="button" data-click="buy" hidden="">Buy Now!</button>
+		</div>
+		<div class="card product-details-container">
+			<div itemprop="description">{{ include.product.description }}</div>
+			<hr />
+			<details>
+				<summary role="button" class="inline-block">Product Details</summary>
+				<ul>
+					{% if include.product.brand %}
+						<li>
+							<span class="detail-name">Brand: </span>
+							<span itemprop="brand">{{ include.product.brand }}</span>
+						</li>
+					{% endif %}
+					{% if include.product.color %}
+						<li>
+							<span class="detail-name">Color: </span>
+							<span itemprop="color">{{ include.product.color }}</span>
+						</li>
+					{% endif %}
+					{% if include.product.weight %}
+						<li>
+							<span class="detail-name">Weight: </span>
+							<span itemprop="weight">{{ include.product.weight }}</span>
+						</li>
+					{% endif %}
+					{% if include.product.width %}
+						<li>
+							<span class="detail-name">Width: </span>
+							<span itemprop="width">{{ include.product.width }}</span>
+						</li>
+					{% endif %}
+					{% if include.product.height %}
+						<li>
+							<span class="detail-name">Height: </span>
+							<span itemprop="height">{{ include.product.height }}</span>
+						</li>
+					{% endif %}
+					{% if include.product.depth %}
+						<li>
+							<span class="detail-name">Depth: </span>
+							<span itemprop="depth">{{ include.product.depth }}</span>
+						</li>
+					{% endif %}
+				</ul>
+			</details>
+		</div>
+	</header>
+
 	<section class="card">
 		{{ content }}
 	</section>
