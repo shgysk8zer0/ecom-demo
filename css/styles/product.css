@@ -9,7 +9,7 @@
 
 [itemtype="http://schema.org/Product"] header {
 	display: grid;
-	grid-template-columns: 60vw 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-template-areas: 'image info' 'description description';
 	grid-gap: 0.7rem;
 }
