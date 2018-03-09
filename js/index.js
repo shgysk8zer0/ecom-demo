@@ -1,7 +1,7 @@
 import './std-js/deprefixer.js';
 import './std-js/shims.js';
 import './gallery.js';
-import {$, wait, ready, registerServiceWorker} from './std-js/functions.js';
+import {$, ready, registerServiceWorker} from './std-js/functions.js';
 import * as Mutations from './std-js/mutations.js';
 import {supportsAsClasses} from './std-js/supports.js';
 import webShareApi from './std-js/webShareApi.js';
@@ -153,27 +153,23 @@ ready().then(async () => {
 			}).then($btns => $btns.unhide());
 		});
 	} else {
-		$('[itemtype="http://schema.org/Product"][itemscope] [data-click="buy"]').remove();
-	}
+		$('[data-click="buy"]').click(() => {
+			const dialog = document.createElement('dialog');
+			const msg = document.createElement('div');
+			const close = document.createElement('button');
 
-	$('header .animation-paused, body > .animation-paused').each(async (el, n) => {
-		await wait(n * 200);
-		el.classList.remove('animation-paused');
-	});
+			msg.textContent = 'Your browser does not support the Payment Request API.';
+			msg.append(document.createElement('br'));
+			msg.append('A polyfill is currently being created using form autocomplete.');
+			close.textContent = 'Ok';
+			dialog.append(msg, close);
 
-	if ('IntersectionObserver' in window) {
-		$('main .animation-paused').intersect((entries, observer) => {
-			entries.filter(entry => entry.isIntersecting).forEach(async (entry, n) => {
-				observer.unobserve(entry.target);
-				await wait(n * 200);
-				entry.target.classList.remove('animation-paused');
-
-			});
-		}, {rootMargin: '50%'});
-	} else {
-		await $('main .animation-paused').each(async (el, n) => {
-			await wait(n * 200);
-			el.classList.remove('animation-paused');
-		});
+			dialog.classList.add('clearfix', 'animation-speed-normal', 'animation-ease-in', 'fadeInUp');
+			close.classList.add('float-right');
+			close.addEventListener('click', event => event.target.closest('dialog[open]').close());
+			dialog.addEventListener('close', event => event.target.remove());
+			document.body.append(dialog);
+			dialog.showModal();
+		}).then($btns => $btns.unhide());
 	}
 });
