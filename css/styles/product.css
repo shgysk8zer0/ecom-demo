@@ -49,8 +49,9 @@
 
 @media (max-width: 800px) {
 	[itemtype="http://schema.org/Product"] header {
-		grid-template-columns: 1fr 50vw;
+		grid-template-columns: 1fr;
 		grid-gap: 2rem;
-		grid-template-areas: 'info image' 'description description';
+		grid-template-areas: 'image' 'info' 'description';
+		margin: 0;
 	}
 }
