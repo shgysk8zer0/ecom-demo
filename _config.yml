@@ -1,6 +1,7 @@
 author: Chris Zuber
 title: Generic Company
 url: 'https://generic-store.netlify.com'
+timezone: America/Los_Angeles
 markdown: kramdown
 version: 0.1.0
 lang: en
